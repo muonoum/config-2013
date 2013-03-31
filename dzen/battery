@@ -1,0 +1,18 @@
+#!/bin/bash
+source $HOME/.dzenrc
+while true; do
+    F=$FOREGROUND
+    B=$(acpi -b|cut -d' ' -f4|tr -d [,%])
+    if   [[ $B -ge 50 ]]; then
+        B="^i($ICONS/bf.xbm) ^fg($F)$B%"
+    elif [[ $B -ge 30 ]]; then
+        B="^i($ICONS/bm.xbm) ^fg($F)$B%"
+    elif [[ $B -ge 10 ]]; then
+        B="^i($ICONS/bl.xbm) ^fg($F)$B%"
+    else
+        F="#550000"
+        B="^i($ICONS/be.xbm) ^fg($F)$B%"
+    fi
+    echo "6 $COLORS $B " > $PIPE
+    sleep 5
+done

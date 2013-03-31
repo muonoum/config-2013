@@ -1,0 +1,9 @@
+#!/bin/bash
+source $HOME/.dzenrc
+T=$(free -m | awk '/Mem/ { print $2 }')
+GDBAR="gdbar -w $BARWIDTH -h 7 -fg $FOREGROUND -ss 1 -sw 2 -max $T -bg $BARBG"
+while true; do
+    U=$(free -m | awk '/buffers\/cache/ { print $3 }')
+    echo "3 $COLORS ^i($ICONS/mem.xbm) $(echo $U | $GDBAR) $COLORS$DOT" > $PIPE
+    sleep 5
+done

@@ -1,0 +1,29 @@
+--- client.c	2011-11-18 16:30:22.000000000 +0100
++++ client.c	2012-03-16 08:50:04.063536320 +0100
+@@ -455,6 +455,7 @@
+ 			else
+ 				client_exitmsg = "detached";
+ 			client_write_server(MSG_EXITING, NULL, 0);
++      job_run("$HOME/.dzen/tmux", NULL, NULL, NULL);
+ 			break;
+ 		case MSG_EXIT:
+ 			if (datalen != 0 &&
+@@ -463,6 +464,7 @@
+
+ 			client_write_server(MSG_EXITING, NULL, 0);
+ 			client_exitmsg = "exited";
++      job_run("$HOME/.dzen/tmux", NULL, NULL, NULL);
+ 			break;
+ 		case MSG_EXITED:
+ 			if (datalen != 0)
+--- status.c	2012-01-20 22:20:36.000000000 +0100
++++ status.c	2012-03-16 08:50:11.620319841 +0100
+@@ -153,6 +153,8 @@
+ 	size_t			llen, rlen;
+ 	int			larrow, rarrow, utf8flag;
+
++  job_run("$HOME/.dzen/tmux", NULL, NULL, NULL);
++
+ 	/* No status line? */
+ 	if (c->tty.sy == 0 || !options_get_number(&s->options, "status"))
+ 		return (1);

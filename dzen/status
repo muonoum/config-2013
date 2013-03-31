@@ -1,0 +1,11 @@
+#!/bin/bash
+source $HOME/.dzenrc
+rm -f $PIPE
+mkfifo $PIPE
+tail -f $PIPE | dmplex | dzen2 -h $HEIGHT -xs 2 -fn $FONT -bg $BACKGROUND -fg $FOREGROUND -geometry $GEOMETRY &
+$ROOT/battery &
+$ROOT/tmux
+$ROOT/cpu &
+$ROOT/memory &
+$ROOT/wifi &
+$ROOT/clock &

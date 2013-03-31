@@ -1,0 +1,7 @@
+#!/bin/bash
+source $HOME/.dzenrc
+GDBAR="gcpubar -c 3 -i 0.2 -ss 1 -sw 2 -w $BARWIDTH -h 7 -fg $FOREGROUND -bg $BARBG"
+while true; do
+    echo "4 $COLORS ^i($ICONS/cpu.xbm) $($GDBAR | tail -1) $COLORS$DOT" > $PIPE
+    sleep 1
+done

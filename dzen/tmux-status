@@ -1,0 +1,26 @@
+#!/bin/bash
+
+source $HOME/.dzenrc
+
+LISTF="^fg($FOREGROUND)"
+LISTB="^bg(#000000)"
+LISTS="^fg($HIGHLIGHT)"
+
+while read SESSION; do
+    NAMES=""
+    while read INPUT; do
+        WINDOW=${INPUT%%,*}
+        ID=${WINDOW%:*}
+        NAME=${WINDOW#*:}
+        if [[ $INPUT =~ ,1$ ]]; then
+            NAMES="$NAMES$LISTS$NAME "
+            PANE=$(tmux lsp -t $SESSION:$ID|grep active|cut -d: -f1)
+            CURRENT=$ID
+        else
+            NAMES="$NAMES$LISTF$NAME "
+        fi
+    done < <(tmux lsw -t $SESSION -F "#{window_index}:#{window_name},#{window_active}")
+    OUTPUT="$OUTPUT$COLORS $SESSION<$CURRENT:$PANE> $LISTB $NAMES"
+done < <(tmux ls -F "#{session_name},#{session_attached}"|grep ,1$|cut -d, -f1)
+
+echo "$COLORS $(tmux ls|grep -v attached|wc -l) $DOT$OUTPUT"

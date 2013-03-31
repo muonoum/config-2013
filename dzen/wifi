@@ -1,0 +1,13 @@
+#!/bin/bash
+source $HOME/.dzenrc
+while true; do
+    Q=$(iwconfig $INTERFACE | grep Quality | cut -d= -f2 | cut -d/ -f1)
+    if `ip a show $INTERFACE | grep -q 'inet '`; then
+        FG=$FOREGROUND
+    else
+        FG="#222222"
+    fi
+    GDBAR="gdbar -w $BARWIDTH -h 7 -fg $FG -ss 1 -sw 2 -max 70 -bg $BARBG"
+    echo "5 $COLORS ^i($ICONS/wifi.xbm) $(echo $Q | $GDBAR) $COLORS$DOT" > $PIPE
+    sleep 5
+done

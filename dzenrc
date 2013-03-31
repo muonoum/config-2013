@@ -1,0 +1,14 @@
+ROOT=$HOME/.dzen
+PIPE=$ROOT/pipe
+FOREGROUND="#aaaaaa"
+BACKGROUND="#000000"
+HIGHLIGHT="#9e5641" # #11809E
+FONT="-*-dina-bold-r-*-*-*-10-*-*-*-*-*-*"
+COLORS="^fg($FOREGROUND)^bg($BACKGROUND)"
+DOT="^r(2x2)"
+ICONS=$HOME/.icons
+INTERFACE=wlan0
+GEOMETRY=+0-0
+BARWIDTH=30
+BARBG=gray40
+HEIGHT=23
