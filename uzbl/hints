@@ -1,0 +1,6 @@
+set javascript_windows = 1
+set follow_hint_keys = asdfghjkl
+@cbind <Tab> = script @scripts/hints.js '@{follow_hint_keys} '
+@cbind ` = script @scripts/hints.js '@{follow_hint_keys} clear'
+@cbind ,_ = script @scripts/hints.js '@{follow_hint_keys} %s'
+@cbind ._ = script @scripts/hints.js '@{follow_hint_keys} new %s'

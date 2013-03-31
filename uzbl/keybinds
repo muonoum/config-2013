@@ -1,0 +1,31 @@
+@cbind s<search:>_ = uri http://www.google.com/search?q=\@<encodeURIComponent(%r)>\@
+@cbind o< open:>_ = uri %s
+@cbind O< open[new]:>_  = event REQ_NEW_WINDOW %s
+@cbind u = scroll vertical -80%
+@cbind d = scroll vertical 80%
+@cbind j = scroll vertical 150
+@cbind k = scroll vertical -150
+@cbind J = scroll vertical 80
+@cbind K = scroll vertical -80
+@cbind i = set mode = insert
+@cbind r = reload
+@cbind R = reload_ign_cache
+@cbind b = back
+@cbind f = forward
+@cbind S = stop
+@cbind t = toggle_status
+@cbind ^ = scroll horizontal begin
+@cbind $ = scroll horizontal end
+@cbind G = scroll vertical end
+@cbind g = scroll vertical begin
+@cbind H = scroll horizontal -80
+@cbind L = scroll horizontal 80
+@cbind l = scroll horizontal 150
+@cbind h = scroll horizontal -150
+@cbind Q = exit
+@cbind w = event REQ_NEW_WINDOW
+@cbind c = dehilight
+@cbind /* = search %s
+@cbind ?* = search_reverse %s
+@cbind n = search
+@cbind N = search_reverse

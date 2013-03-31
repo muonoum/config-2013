@@ -1,0 +1,71 @@
+set default_font_family   = Calibri
+set monospace_font_family = dina
+set font_size             = 12
+set monospace_size        = 10
+set minimum_font_size     = 6
+set scripts               = /home/alex/.uzbl/scripts
+set base                  = /home/alex/.uzbl
+set fifo_dir              = /tmp
+set shell_cmd             = sh -c
+set default_mode          = command
+
+include @base/theme
+
+set gbind   = request MODE_BIND global
+set ebind   = request MODE_BIND global,-insert
+set ibind   = request MODE_BIND insert
+set cbind   = request MODE_BIND command
+set onev    = request ON_EVENT
+set C       = request MODE_CONFIG command
+set I       = request MODE_CONFIG insert
+set S       = request MODE_CONFIG stack
+set ignore  = request IGNORE_KEY
+set setmode = set mode =
+set setstat = set status_message =
+
+@ignore <Shift>
+@ignore <Mod4>
+
+@C mode_indicator = C
+@C keycmd_events  = 1
+@C forward_keys   = 0
+@C modcmd_updates = 1
+
+@I mode_indicator = I
+@I keycmd_events  = 0
+@I forward_keys   = 1
+@I modcmd_updates = 0
+
+@S mode_indicator = B
+@S keycmd_events  = 1
+@S forward_keys   = 0
+@S modcmd_updates = 1
+
+@onev REQ_NEW_WINDOW event NEW_WINDOW %s
+@onev NEW_WINDOW     sh 'uz ${1:+-u "$1"}' %r
+@onev LOAD_START     @setstat <span @status_wait> wait </span>
+@onev LOAD_START     @setmode
+@onev LOAD_COMMIT    @setstat <span @status_recv> recv </span>
+@onev LOAD_FINISH    @setstat <span @status_done> done </span>
+@onev SCROLL_VERT    set scroll_message = \@<(function(curr, min, max, size){if(max == size) return '--'; var p=(curr/(max - size)); return Math.round(10000*p/100);})(%1,%2,%3,%4)>\@%
+@onev ESCAPE         @setmode
+@onev ROOT_ACTIVE    @setmode command
+@onev FOCUS_ELEMENT  sh 'if [ "$1" = INPUT -o "$1" = TEXTAREA -o "$1" = SELECT ]; then echo "set mode = insert" > $UZBL_FIFO; fi' %s
+
+@ebind <Return>          = event KEYCMD_EXEC_CURRENT
+@ebind <Left>            = event SET_CURSOR_POS -
+@ebind <Right>           = event SET_CURSOR_POS +
+@ebind <BackSpace>       = event KEYCMD_BACKSPACE
+@ebind <Delete>          = event KEYCMD_DELETE
+@ebind <Tab>             = event START_COMPLETION
+@ebind <Ctrl>w           = event KEYCMD_STRIP_WORD \ -./&? =
+@ebind <Ctrl>u           = event SET_KEYCMD
+@ebind <Ctrl>a           = event SET_CURSOR_POS 0
+@ebind <Ctrl>e           = event SET_CURSOR_POS -1
+@ebind <Up>              = event HISTORY_PREV
+@ebind <Down>            = event HISTORY_NEXT
+@ebind <Ctrl>r<search:>_ = event HISTORY_SEARCH %s
+@gbind <Escape>          = event ESCAPE
+
+include @base/keybinds
+include @base/hints
