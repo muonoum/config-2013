@@ -99,13 +99,13 @@ syntax on
 
 if has("autocmd")
   autocmd! BufWritePost .vimrc source $MYVIMRC
-  autocmd! BufWritePre  * :set ff=unix
-  autocmd! BufReadPost  *sxhkdrc* :set ft=sxhkdrc
-  autocmd! BufReadPost  *.coffee :set ft=coffee
-  autocmd! BufReadPost  *vimperatorrc :set ft=vim
-  autocmd! BufWritePre  * :%s/\s\+$//e
-  autocmd! FileType c   set commentstring=//\ %s
-  autocmd! BufReadPost  *.h set ft=c
+  autocmd! BufWritePre * :set ff=unix
+  autocmd! BufWritePre * :%s/\s\+$//e
+  autocmd! BufNewFile,BufRead *sxhkdrc* :set ft=sxhkdrc
+  autocmd! BufNewFile,BufRead *.coffee :set ft=coffee
+  autocmd! BufNewFile,BufRead *vimperatorrc :set ft=vim
+  autocmd! BufNewFile,BufRead *.h :set ft=c
+  autocmd! FileType c set commentstring=//\ %s
 endif
 
 if has("win32")
