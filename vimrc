@@ -22,11 +22,12 @@ call vundle#rc()
 " Bundle 'tpope/vim-speeddating'
 " Bundle 'kana/vim-textobj-user'
 " Bundle 'kana/vim-textobj-function'
+" Bundle 'vim-ruby/vim-ruby'
+" Bundle 'snipMate'
 
 Bundle 'gmarik/vundle'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'w0ng/vim-hybrid'
-Bundle 'vim-ruby/vim-ruby'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'tpope/vim-commentary'
@@ -35,7 +36,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'baskerville/vim-sxhkdrc'
-Bundle 'snipMate'
+Bundle 'SirVer/ultisnips'
 Bundle 'a.vim'
 
 filetype plugin indent on
