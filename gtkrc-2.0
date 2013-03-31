@@ -1,0 +1,14 @@
+# -- THEME AUTO-WRITTEN DO NOT EDIT
+include "/usr/share/themes/Aurora/gtk-2.0/gtkrc"
+
+style "user-font" {
+	font_name = "Clean 9"
+}
+
+widget_class "*" style "user-font"
+
+gtk-font-name="Clean 9"
+
+include "/home/alex/.gtkrc.mine"
+
+# -- THEME AUTO-WRITTEN DO NOT EDIT
