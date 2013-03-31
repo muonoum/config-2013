@@ -51,6 +51,19 @@ let g:UltiSnipsJumpBackwardTrigger = "<c-s>"
 
 let g:hybrid_use_Xresources = 1
 
+function! Smartinput_escape(char)
+    call smartinput#map_to_trigger('i', '<S-tab>', a:char, '<S-tab>')
+    call smartinput#define_rule({
+    \   'char':     '<S-tab>',
+    \   'at':       '\%#\_s*' + a:char,
+    \   'input':    '<C-r>=smartinput#_leave_block(''' + a:char + ''')<Enter><Right>'
+    \ })
+endfunction
+
+call Smartinput_escape(')')
+call Smartinput_escape(']')
+call Smartinput_escape('}')
+
 set timeoutlen=500
 set shortmess=filnxtToOI
 set number
