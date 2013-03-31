@@ -1,0 +1,14 @@
+[user]
+	email = alex@stensrud.nu
+	name = Alexander Stensrud
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+[core]
+	excludesfile = ~/.gitignore
+	quotepath = false
+	autocrlf = input
+[push]
+	default = simple
