@@ -1,0 +1,29 @@
+#!/bin/bash
+
+export BSPWM_SOCKET=/tmp/bspwm-socket
+
+bspc set bottom_padding 23
+bspc set border_width 8
+bspc set window_gap 2
+bspc set focus_follows_pointer false
+bspc set click_to_focus true
+bspc set gapless_monocle true
+bspc set borderless_monocle true
+bspc set apply_shadow_property true
+bspc set adaptative_raise true
+bspc set fence_grip 100
+bspc set focused_border_color "#11809E"
+bspc set active_border_color "#1D667A"
+bspc set normal_border_color "#3F3E3B"
+bspc set presel_border_color "#A7BF81"
+bspc set focused_locked_border_color "#C7B579"
+bspc set active_locked_border_color "#7E7F89"
+bspc set normal_locked_border_color "#3F3E3B"
+bspc set urgent_border_color "#EFA29A"
+
+bspc rule MPlayer floating
+bspc rule Steam floating
+bspc rule VirtualBox floating
+bspc rule Gimp floating
+
+bspc add Desktop02 Desktop03 Desktop04

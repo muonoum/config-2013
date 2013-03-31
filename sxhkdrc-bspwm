@@ -1,0 +1,95 @@
+super + F1
+    pkill -USR1 -x sxhkd
+
+super + F2
+    $HOME/.bin/bspwm-autostart
+
+super + F3
+    bspc toggle_visibility
+
+super + b
+    firefox
+
+super + shift + Return
+    urxvtcd
+
+super + r
+    run
+
+super + v
+    p
+
+super + Return
+    bspc swap
+
+super + {comma,period}
+    bspc circulate {backward,forward}
+
+super + shift + q
+    bspc quit
+
+super + f
+    bspc toggle_fullscreen
+
+super + shift + r
+    bspc reload
+
+super + {x,shift + x}
+    bspc {close,kill}
+
+super + space
+    bspc cycle_layout
+
+super + {w,a,s,d}
+    bspc presel {up,left,down,right}
+
+super + shift + {w,a,s,d}
+    bspc presel {up 0.66,left 0.66,down 0.33,right 0.33}
+
+super + alt + {w,a,s,d}
+    bspc presel {up 0.33,left 0.33,down 0.66,right 0.66}
+
+super + c
+    bspc cancel
+
+super + Tab
+    bspc cycle next
+
+super + o
+    bspc toggle_floating
+
+super + p
+    bspc rotate clockwise
+
+super + {j,k}
+    bspc cycle {next,prev}
+
+super + shift + {j,k}
+    $HOME/.bspwm/shift {next,prev}
+
+super + {Up,Down,Left,Right}
+    bspc push {up,down,left,right}
+
+super + shift + {Down,Up,Right,Left}
+    bspc pull {up,down,left,right}
+
+super + ctrl + {Down,Up,Right,Left}
+    bspc shift {down,up,right,left}
+
+super + m
+    bspc cycle_monitor next
+
+super + button{1,3}
+    bspc grab_pointer {move,resize}
+
+super + button2
+    bspc grab_pointer resize_tiled
+
+super + !button{1,2,3}
+    bspc {track_pointer,track_pointer,track_pointer} %i %i
+
+super + @button{1,2,3}
+    bspc {ungrab_pointer,ungrab_pointer,ungrab_pointer}
+
+super + {1-4}
+    bspc use Desktop0{1-4}

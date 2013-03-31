@@ -1,0 +1,5 @@
+#!/bin/sh
+bspc cycle $1 --skip-floating
+bspc swap
+bspc cycle $1 --skip-floating
+
