@@ -136,6 +136,7 @@ map <leader>sm :sp Makefile<cr>
 map <leader>xx :bd<cr>
 map <leader>cc :CoffeeCompile<cr>
 map <leader>cm :CoffeeMake<cr>
+cmap <C-A> <C-B>
 nnoremap <leader>g :GundoToggle<cr>
 nnoremap <leader>b :BundleInstall<cr>
 nnoremap <leader>bb :BundleInstall!<cr>
