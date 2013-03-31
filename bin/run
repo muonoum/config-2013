@@ -1,0 +1,47 @@
+#!/bin/bash
+
+ITEMS=$(IFS=":"; lsx $PATH | sort -u)
+HISTORY=$HOME/.run-history
+DMENU="dmenu -i $DMENU_OPTIONS"
+RUN_IN_TERMINAL=no
+TERM=urxvtcd
+
+touch $HISTORY
+
+menu() {
+    HISTORY_ITEMS=$(grep -Fx "$ITEMS" "$HISTORY")
+    echo "$HISTORY_ITEMS" > "$HISTORY"
+    [ -n "$HISTORY_ITEMS" ] && echo "$HISTORY_ITEMS"
+    echo "$ITEMS" | grep -Fvx "$HISTORY_ITEMS"
+    echo "*run in terminal: $RUN_IN_TERMINAL"
+    echo "*clear history"
+}
+
+run_in_terminal() {
+    [[ $RUN_IN_TERMINAL == "yes" ]] && RUN_IN_TERMINAL="no" || RUN_IN_TERMINAL="yes"
+}
+
+while true; do
+    APP=$(menu | $DMENU)
+    case "$APP" in
+        "*clear history")
+            CONFIRM=$(printf '%s\n' 'yes' 'no' | $DMENU -p "clear history?: ")
+            [[ -z "$CONFIRM" || "$CONFIRM" == "no" ]] && continue
+            rm -f "$HISTORY"
+            touch "$HISTORY"
+            ;;
+        "*run in terminal"*)
+            run_in_terminal
+            ;;
+        *) [ -z "$APP" ] && exit
+            (echo "$APP"; head -9 "$HISTORY" | grep -Fvx "$APP") > "$HISTORY.new"
+            mv "$HISTORY"{.new,}
+            if [[ $RUN_IN_TERMINAL == "yes" ]]; then
+                $TERM -e $APP < /dev/null &> /dev/null & disown
+            else
+                $APP
+            fi
+            exit
+            ;;
+    esac
+done

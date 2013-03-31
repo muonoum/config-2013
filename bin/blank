@@ -1,0 +1,10 @@
+#!/bin/bash
+if [[ "$1" == "off" ]]; then
+    xset -dpms
+    xset s off
+    xset s noblank
+else
+    xset +dpms
+    xset s on
+    xset s blank
+fi

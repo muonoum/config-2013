@@ -1,0 +1,6 @@
+#!/bin/bash
+NET=$1
+[ -z $NET ] && NET=`find /etc/network.d -maxdepth 1 -type f -exec basename {} \; | dmenu $DMENU_OPTIONS $*`
+[ -z $NET ] && exit
+sudo netcfg -a
+sudo netcfg "$NET"

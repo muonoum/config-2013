@@ -1,0 +1,7 @@
+#!/bin/sh
+export XDG_DATA_HOME=${XDG_DATA_HOME:-$HOME/.local/share}
+export XDG_CACHE_HOME=${XDG_CACHE_HOME:-$HOME/.cache}
+export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
+DAEMON_SOCKET=$XDG_CACHE_HOME/uz
+uzbl-event-manager -va start -s $DAEMON_SOCKET
+exec uzbl-core "$@" --config $HOME/.uzbl/config --connect-socket $DAEMON_SOCKET

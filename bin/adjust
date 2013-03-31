@@ -1,0 +1,31 @@
+#!/bin/bash
+
+input=$1
+base=$2
+min=$3
+max=$4
+step=$5
+param=$6
+
+cur=$(cat $param)
+new=$min
+
+case $1 in
+    +) new=$((cur+$step)) ;;
+    -) new=$((cur-$step)) ;;
+    *) if [[ -n $input ]]; then
+           new=$input
+       else
+           new=$base
+       fi
+esac
+
+if [[ $new -gt $max ]]; then
+    new=$max
+fi
+
+if [[ $new -lt $min ]]; then
+    new=$min
+fi
+
+sudo bash -c "echo $new > $param"

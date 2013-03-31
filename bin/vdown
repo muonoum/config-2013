@@ -1,0 +1,3 @@
+#!/bin/bash
+[ -z $1 ] && CH=10 || CH=$1
+amixer sset Master $CH%-

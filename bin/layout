@@ -1,0 +1,2 @@
+#!/bin/bash
+setxkbmap $1 && xmodmap $HOME/.xmodmap

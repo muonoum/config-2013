@@ -1,0 +1,2 @@
+MODULES="configfile ext2 fat part_gpt normal linux ls boot echo reboot search search_fs_file search_fs_uuid search_label help font efi_gop efi_uga gfxterm"
+grub-mkimage -O x86_64-efi -p "" -o /boot/efi/boot/bootx64.efi -c /boot/load.cfg $MODULES
