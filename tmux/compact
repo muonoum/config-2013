@@ -1,0 +1,7 @@
+#!/bin/sh
+tmux lsw | awk -F: \
+    'BEGIN { I=-1 }
+        /^[0-9]+/ { if($1!=++I) print "tmux movew -d -s" $1 " -t" I }
+        /active/ { R=I }
+    END { print "tmux selectw -t" R }' |
+sh
