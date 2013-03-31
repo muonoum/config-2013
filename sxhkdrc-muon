@@ -1,0 +1,69 @@
+super + F1
+    pkill -USR1 -x sxhkd
+
+super + b
+    firefox
+
+super + shift + Return
+    urxvtcd
+
+super + r
+    run
+
+super + 1
+    hsetroot -solid "#000000"
+
+super + shift + q
+    $HOME/kode/muon/muoc quit
+
+super + {Tab, shift + Tab}
+    $HOME/kode/muon/muoc select-window {+1,-1}
+
+super + {j,k}
+    $HOME/kode/muon/muoc select-window {+1,-1}
+
+super + button{4,5}
+    $HOME/kode/muon/muoc select-window {-1,+1}
+
+super + {comma,period}
+    $HOME/kode/muon/muoc root-count {+1,-1}
+
+super + {s, shift + s, a, shift + a}
+    $HOME/kode/muon/muoc root-size {+0.05, +0.01, -0.05, -0.01}
+
+super + m
+    $HOME/kode/muon/muoc mirror toggle
+
+super + x
+    $HOME/kode/muon/muoc close-window
+
+super + f
+    $HOME/kode/muon/muoc fullscreen toggle
+
+super + shift + {j,k}
+    $HOME/kode/muon/muoc shift-window {+1,-1}
+
+super + space
+    $HOME/kode/muon/muoc next-layout
+
+super + p
+    $HOME/kode/muon/muoc select-window $(inactive-windows)
+
+super + shift + space
+    $HOME/kode/muon/muoc reset-layout
+
+super + o
+    $HOME/kode/muon/muoc toggle-floating
+
+:button1
+    $HOME/kode/muon/muoc focus-window
+
+super + button1
+    $HOME/kode/muon/muoc grab-pointer move
+
+super + !button1
+    $HOME/kode/muon/muoc track-pointer %i %i
+
+super + @button1
+    $HOME/kode/muon/muoc ungrab-pointer
+

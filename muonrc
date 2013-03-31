@@ -1,0 +1,12 @@
+#!/bin/sh
+
+PATH=$PATH:$HOME/kode/muon
+
+muoc begin
+    muoc padding bottom 23
+    muoc window-gap 2
+    muoc root-size 0.65
+    muoc border-width 7
+    muoc rule MPlayer floating
+    muoc rule VirtualBox floating
+muoc end
