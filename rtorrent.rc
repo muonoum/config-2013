@@ -1,0 +1,10 @@
+directory = /home/alex/download/torrent
+session = /home/alex/.torrent
+schedule = watch_directory,5,5,load_start=/home/alex/download/*.torrent
+schedule = untied_directory,5,5,stop_untied=
+schedule = low_diskspace,5,60,close_low_diskspace=100M
+port_range = 9090-9090
+encryption = require
+dht = auto
+peer_exchange = yes
+use_udp_trackers = yes
