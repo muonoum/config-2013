@@ -45,7 +45,7 @@ filetype plugin indent on
 " let g:gundo_right = 1
 
 let g:UltiSnipsSnippetDirectories = ["snippets"]
-let g:UltiSnipsJumpForwardTrigger = "<c-a>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-s>"
 
 let g:hybrid_use_Xresources = 1
