@@ -1,0 +1,4 @@
+#define _battery_med_width 8
+#define _battery_med_height 8
+static unsigned char _battery_med_bits[] = {
+   0x18, 0x7e, 0x42, 0x42, 0x5a, 0x5a, 0x42, 0x7e };
