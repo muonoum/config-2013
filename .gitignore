@@ -1,1 +1,6 @@
 dzen/pipe
+xdg/config/*
+xdg/data/*
+!xdg/config/fontconfig/
+vim/bundle/*
+!vim/bundle/vundle
