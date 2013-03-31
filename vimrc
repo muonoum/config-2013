@@ -43,7 +43,11 @@ filetype plugin indent on
 
 " let g:ctrlp_working_path_mode = 2
 " let g:gundo_right = 1
-let g:snippets_dir = "$HOME/.vim/snippets"
+
+let g:UltiSnipsSnippetDirectories = ["snippets"]
+let g:UltiSnipsJumpForwardTrigger = "<c-a>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-s>"
+
 let g:hybrid_use_Xresources = 1
 
 set timeoutlen=500
