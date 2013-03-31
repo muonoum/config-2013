@@ -1,0 +1,17 @@
+set focuscontent
+set hintchars=asdfghjklzxcvbnmqwertyuiop
+set hintinputs=label,name,value
+set scrollbars=false
+set gui=none,tabs
+map gb :back<cr>
+map gf :forward<cr>
+nmap <cr> :noh<cr>
+map ,s :source $HOME/.vimperatorrc<cr>
+noremap j 3j
+noremap k 3k
+noremap h 10h
+noremap l 10l
+set complete=sl
+set ignorecase
+hi Hint       color: white; background: black; font: bold 10pt monospace; padding: 0 1px 0 2px; letter-spacing: 1px;
+hi HintActive color: white; background: black; font: bold 10pt monospace; padding: 0 1px 0 2px; letter-spacing: 1px;
