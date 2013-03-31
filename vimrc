@@ -24,12 +24,12 @@ call vundle#rc()
 " Bundle 'kana/vim-textobj-function'
 " Bundle 'vim-ruby/vim-ruby'
 " Bundle 'snipMate'
+" Bundle 'Raimondi/delimitMate'
 
 Bundle 'gmarik/vundle'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'w0ng/vim-hybrid'
 Bundle 'kien/ctrlp.vim'
-Bundle 'Raimondi/delimitMate'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
@@ -38,6 +38,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'baskerville/vim-sxhkdrc'
 Bundle 'SirVer/ultisnips'
 Bundle 'a.vim'
+Bundle 'kana/vim-smartinput'
 
 filetype plugin indent on
 
