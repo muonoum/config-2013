@@ -4,3 +4,5 @@ xdg/data/*
 !xdg/config/fontconfig/
 vim/bundle/*
 !vim/bundle/vundle
+urxvt/*
+!urxvt/ext/
