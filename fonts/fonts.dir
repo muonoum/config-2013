@@ -1,0 +1,68 @@
+67
+DinaBold10.pcf -windows-dina-bold-r-normal--16-100-96-96-c-80-microsoft-cp1252
+DinaBold8.pcf -windows-dina-bold-r-normal--13-80-96-96-c-70-microsoft-cp1252
+DinaBold9.pcf -windows-dina-bold-r-normal--15-90-96-96-c-70-microsoft-cp1252
+DinaBoldItalic10.pcf -windows-dina-bold-i-normal--16-100-96-96-c-80-microsoft-cp1252
+DinaBoldItalic8.pcf -windows-dina-bold-i-normal--13-80-96-96-c-70-microsoft-cp1252
+DinaBoldItalic9.pcf -windows-dina-bold-i-normal--15-90-96-96-c-70-microsoft-cp1252
+DinaItalic10.pcf -windows-dina-medium-i-normal--16-100-96-96-c-80-microsoft-cp1252
+DinaItalic8.pcf -windows-dina-medium-i-normal--13-80-96-96-c-70-microsoft-cp1252
+DinaItalic9.pcf -windows-dina-medium-i-normal--15-90-96-96-c-70-microsoft-cp1252
+DinaMedium10.pcf -windows-dina-medium-r-normal--16-100-96-96-c-80-microsoft-cp1252
+DinaMedium8.pcf -windows-dina-medium-r-normal--13-80-96-96-c-70-microsoft-cp1252
+DinaMedium9.pcf -windows-dina-medium-r-normal--15-90-96-96-c-70-microsoft-cp1252
+Vera.ttf -bitstream-bitstream vera sans-medium-r-normal--0-0-0-0-p-0-iso10646-1
+Vera.ttf -bitstream-bitstream vera sans-medium-r-normal--0-0-0-0-p-0-iso8859-1
+Vera.ttf -bitstream-bitstream vera sans-medium-r-normal--0-0-0-0-p-0-iso8859-15
+Vera.ttf -bitstream-bitstream vera sans-medium-r-normal--0-0-0-0-p-0-iso8859-9
+Vera.ttf -bitstream-bitstream vera sans-medium-r-normal--0-0-0-0-p-0-microsoft-cp1252
+VeraBI.ttf -bitstream-bitstream vera sans-bold-o-normal--0-0-0-0-p-0-iso10646-1
+VeraBI.ttf -bitstream-bitstream vera sans-bold-o-normal--0-0-0-0-p-0-iso8859-1
+VeraBI.ttf -bitstream-bitstream vera sans-bold-o-normal--0-0-0-0-p-0-iso8859-15
+VeraBI.ttf -bitstream-bitstream vera sans-bold-o-normal--0-0-0-0-p-0-iso8859-9
+VeraBI.ttf -bitstream-bitstream vera sans-bold-o-normal--0-0-0-0-p-0-microsoft-cp1252
+VeraBd.ttf -bitstream-bitstream vera sans-bold-r-normal--0-0-0-0-p-0-iso10646-1
+VeraBd.ttf -bitstream-bitstream vera sans-bold-r-normal--0-0-0-0-p-0-iso8859-1
+VeraBd.ttf -bitstream-bitstream vera sans-bold-r-normal--0-0-0-0-p-0-iso8859-15
+VeraBd.ttf -bitstream-bitstream vera sans-bold-r-normal--0-0-0-0-p-0-iso8859-9
+VeraBd.ttf -bitstream-bitstream vera sans-bold-r-normal--0-0-0-0-p-0-microsoft-cp1252
+VeraIt.ttf -bitstream-bitstream vera sans-medium-o-normal--0-0-0-0-p-0-iso10646-1
+VeraIt.ttf -bitstream-bitstream vera sans-medium-o-normal--0-0-0-0-p-0-iso8859-1
+VeraIt.ttf -bitstream-bitstream vera sans-medium-o-normal--0-0-0-0-p-0-iso8859-15
+VeraIt.ttf -bitstream-bitstream vera sans-medium-o-normal--0-0-0-0-p-0-iso8859-9
+VeraIt.ttf -bitstream-bitstream vera sans-medium-o-normal--0-0-0-0-p-0-microsoft-cp1252
+VeraMoBI.ttf -bitstream-bitstream vera sans mono-bold-o-normal--0-0-0-0-m-0-iso10646-1
+VeraMoBI.ttf -bitstream-bitstream vera sans mono-bold-o-normal--0-0-0-0-m-0-iso8859-1
+VeraMoBI.ttf -bitstream-bitstream vera sans mono-bold-o-normal--0-0-0-0-m-0-iso8859-15
+VeraMoBI.ttf -bitstream-bitstream vera sans mono-bold-o-normal--0-0-0-0-m-0-iso8859-9
+VeraMoBI.ttf -bitstream-bitstream vera sans mono-bold-o-normal--0-0-0-0-m-0-microsoft-cp1252
+VeraMoBd.ttf -bitstream-bitstream vera sans mono-bold-r-normal--0-0-0-0-m-0-iso10646-1
+VeraMoBd.ttf -bitstream-bitstream vera sans mono-bold-r-normal--0-0-0-0-m-0-iso8859-1
+VeraMoBd.ttf -bitstream-bitstream vera sans mono-bold-r-normal--0-0-0-0-m-0-iso8859-15
+VeraMoBd.ttf -bitstream-bitstream vera sans mono-bold-r-normal--0-0-0-0-m-0-iso8859-9
+VeraMoBd.ttf -bitstream-bitstream vera sans mono-bold-r-normal--0-0-0-0-m-0-microsoft-cp1252
+VeraMoIt.ttf -bitstream-bitstream vera sans mono-medium-o-normal--0-0-0-0-m-0-iso10646-1
+VeraMoIt.ttf -bitstream-bitstream vera sans mono-medium-o-normal--0-0-0-0-m-0-iso8859-1
+VeraMoIt.ttf -bitstream-bitstream vera sans mono-medium-o-normal--0-0-0-0-m-0-iso8859-15
+VeraMoIt.ttf -bitstream-bitstream vera sans mono-medium-o-normal--0-0-0-0-m-0-iso8859-9
+VeraMoIt.ttf -bitstream-bitstream vera sans mono-medium-o-normal--0-0-0-0-m-0-microsoft-cp1252
+VeraMono.ttf -bitstream-bitstream vera sans mono-medium-r-normal--0-0-0-0-m-0-iso10646-1
+VeraMono.ttf -bitstream-bitstream vera sans mono-medium-r-normal--0-0-0-0-m-0-iso8859-1
+VeraMono.ttf -bitstream-bitstream vera sans mono-medium-r-normal--0-0-0-0-m-0-iso8859-15
+VeraMono.ttf -bitstream-bitstream vera sans mono-medium-r-normal--0-0-0-0-m-0-iso8859-9
+VeraMono.ttf -bitstream-bitstream vera sans mono-medium-r-normal--0-0-0-0-m-0-microsoft-cp1252
+VeraSe.ttf -bitstream-bitstream vera serif-medium-r-normal--0-0-0-0-p-0-iso10646-1
+VeraSe.ttf -bitstream-bitstream vera serif-medium-r-normal--0-0-0-0-p-0-iso8859-1
+VeraSe.ttf -bitstream-bitstream vera serif-medium-r-normal--0-0-0-0-p-0-iso8859-15
+VeraSe.ttf -bitstream-bitstream vera serif-medium-r-normal--0-0-0-0-p-0-iso8859-9
+VeraSe.ttf -bitstream-bitstream vera serif-medium-r-normal--0-0-0-0-p-0-microsoft-cp1252
+VeraSeBd.ttf -bitstream-bitstream vera serif-bold-r-normal--0-0-0-0-p-0-iso10646-1
+VeraSeBd.ttf -bitstream-bitstream vera serif-bold-r-normal--0-0-0-0-p-0-iso8859-1
+VeraSeBd.ttf -bitstream-bitstream vera serif-bold-r-normal--0-0-0-0-p-0-iso8859-15
+VeraSeBd.ttf -bitstream-bitstream vera serif-bold-r-normal--0-0-0-0-p-0-iso8859-9
+VeraSeBd.ttf -bitstream-bitstream vera serif-bold-r-normal--0-0-0-0-p-0-microsoft-cp1252
+ttf-inconsolata.otf -misc-inconsolata-medium-r-normal--0-0-0-0-p-0-iso10646-1
+ttf-inconsolata.otf -misc-inconsolata-medium-r-normal--0-0-0-0-p-0-iso8859-1
+ttf-inconsolata.otf -misc-inconsolata-medium-r-normal--0-0-0-0-p-0-iso8859-15
+ttf-inconsolata.otf -misc-inconsolata-medium-r-normal--0-0-0-0-p-0-iso8859-2
+ttf-inconsolata.otf -misc-inconsolata-medium-r-normal--0-0-0-0-p-0-iso8859-9
