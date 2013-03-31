@@ -148,6 +148,8 @@ inoremap <cr> <esc>`^
 inoremap <c-a> <c-p>
 inoremap <leader><tab> <tab>
 map Q <nop>
+vmap > >gv
+vmap < <gv
 
 " highlight Normal ctermbg=Black
 " highlight Normal ctermbg=Black
