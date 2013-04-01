@@ -14,7 +14,6 @@ call vundle#rc()
 " Bundle 'kana/vim-operator-replace'
 " Bundle 'kana/vim-niceblock'
 " Bundle 'kana/vim-textobj-underscore'
-" Bundle 'sjl/gundo.vim'
 " Bundle 'godlygeek/tabular'
 " Bundle 'kana/vim-smartword'
 " Bundle 'michaeljsmith/vim-indent-object'
@@ -27,6 +26,7 @@ call vundle#rc()
 " Bundle 'a.vim'
 
 Bundle 'gmarik/vundle'
+Bundle 'sjl/gundo.vim'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'w0ng/vim-hybrid'
 Bundle 'kien/ctrlp.vim'
@@ -42,8 +42,9 @@ Bundle 'kana/vim-altr'
 
 filetype plugin indent on
 
-" let g:ctrlp_working_path_mode = 2
-" let g:gundo_right = 1
+let g:ctrlp_working_path_mode = 2
+let g:gundo_right = 1
+nnoremap <leader>g :GundoToggle<cr>
 
 let g:UltiSnipsSnippetDirectories = ["snippets"]
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
