@@ -24,6 +24,7 @@ call vundle#rc()
 " Bundle 'vim-ruby/vim-ruby'
 " Bundle 'snipMate'
 " Bundle 'kana/vim-smartinput'
+" Bundle 'a.vim'
 
 Bundle 'gmarik/vundle'
 Bundle 'nanotech/jellybeans.vim'
@@ -36,8 +37,8 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'baskerville/vim-sxhkdrc'
 Bundle 'SirVer/ultisnips'
-Bundle 'a.vim'
 Bundle 'Raimondi/delimitMate'
+Bundle 'kana/vim-altr'
 
 filetype plugin indent on
 
@@ -116,6 +117,10 @@ endif
 
 let mapleader=","
 
+nmap <leader>sa <Plug>(altr-sforward)
+nmap <leader>a  <Plug>(altr-forward)
+nmap <leader>va <Plug>(altr-vforward)
+
 map <c-o> :only<cr>
 map <c-h> 5<c-w><
 map <c-l> 5<c-w>>
@@ -132,9 +137,7 @@ map <leader>w :set wrap!<cr>
 imap <leader>w <esc>:set wrap!<cr>i
 map <leader>d :diffupdate<cr>
 imap <leader>d <esc>:diffupdate<cr>i
-map <leader>a :A<cr>
-map <leader>sa :AS<cr>
-map <leader>va :AV<cr>
+
 map <leader>vm :vs Makefile<cr>
 map <leader>m :e Makefile<cr>
 map <leader>sm :sp Makefile<cr>
