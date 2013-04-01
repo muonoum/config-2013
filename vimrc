@@ -52,6 +52,8 @@ nnoremap <leader>b :BundleInstall<cr>
 nnoremap <leader>bb :BundleInstall!<cr>
 nnoremap <leader>bc :BundleClean<cr>
 
+nnoremap <c-p> :CtrlPCurWD<cr>
+
 let g:UltiSnipsSnippetDirectories = ["snippets"]
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-s>"
@@ -99,6 +101,7 @@ set foldmethod=marker
 set scrolloff=1
 set pastetoggle=<leader>.
 set t_Co=256
+set wildignore+=*.o,*.d
 
 "color jellybeans
 color hybrid
