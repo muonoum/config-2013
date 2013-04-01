@@ -42,9 +42,15 @@ Bundle 'kana/vim-altr'
 
 filetype plugin indent on
 
+let mapleader=","
+
 let g:ctrlp_working_path_mode = 2
 let g:gundo_right = 1
 nnoremap <leader>g :GundoToggle<cr>
+
+nnoremap <leader>b :BundleInstall<cr>
+nnoremap <leader>bb :BundleInstall!<cr>
+nnoremap <leader>bc :BundleClean<cr>
 
 let g:UltiSnipsSnippetDirectories = ["snippets"]
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
@@ -116,49 +122,53 @@ else
   set directory=/tmp//
 endif
 
-let mapleader=","
+map <leader>v :tabedit $MYVIMRC<cr>
 
 nmap <leader>sa <Plug>(altr-sforward)
-nmap <leader>a  <Plug>(altr-forward)
+nmap <leader>a <Plug>(altr-forward)
 nmap <leader>va <Plug>(altr-vforward)
 
 map <c-o> :only<cr>
+
+map Q <nop>
+
+vmap > >gv
+vmap < <gv
+
 map <c-h> 5<c-w><
 map <c-l> 5<c-w>>
 map <c-j> <c-w>w
 map <c-k> <c-w>W
-map <leader>v :tabedit $MYVIMRC<cr>
+
 map <leader>ew :e <C-R>=expand("%:p:h")."/"<cr>
 map <leader>es :sp <C-R>=expand("%:p:h")."/"<cr>
 map <leader>ev :vsp <C-R>=expand("%:p:h")."/"<cr>
 map <leader>et :tabe <C-R>=expand("%:p:h")."/"<cr>
 map <leader>cw :cd <C-R>=expand("%:p:h")."/"<cr>
+
 map <leader><cr> :nohlsearch<cr>
+
 map <leader>w :set wrap!<cr>
 imap <leader>w <esc>:set wrap!<cr>i
+
 map <leader>d :diffupdate<cr>
 imap <leader>d <esc>:diffupdate<cr>i
 
 map <leader>vm :vs Makefile<cr>
 map <leader>m :e Makefile<cr>
 map <leader>sm :sp Makefile<cr>
+
 map <leader>xx :bd<cr>
+
 map <leader>cc :CoffeeCompile<cr>
 map <leader>cm :CoffeeMake<cr>
+
 cmap <C-A> <C-B>
-nnoremap <leader>g :GundoToggle<cr>
-nnoremap <leader>b :BundleInstall<cr>
-nnoremap <leader>bb :BundleInstall!<cr>
-nnoremap <leader>bc :BundleClean<cr>
+
 nnoremap <cr> <esc>
 vnoremap <cr> <esc>gV
 onoremap <cr> <esc>
 inoremap <cr> <esc>`^
-inoremap <c-a> <c-p>
-inoremap <leader><tab> <tab>
-map Q <nop>
-vmap > >gv
-vmap < <gv
 
 " highlight Normal ctermbg=Black
 " highlight Normal ctermbg=Black
