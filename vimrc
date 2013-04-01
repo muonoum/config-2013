@@ -16,7 +16,6 @@ call vundle#rc()
 " Bundle 'kana/vim-textobj-underscore'
 " Bundle 'sjl/gundo.vim'
 " Bundle 'godlygeek/tabular'
-" Bundle 'kana/vim-smartinput'
 " Bundle 'kana/vim-smartword'
 " Bundle 'michaeljsmith/vim-indent-object'
 " Bundle 'tpope/vim-speeddating'
@@ -24,7 +23,7 @@ call vundle#rc()
 " Bundle 'kana/vim-textobj-function'
 " Bundle 'vim-ruby/vim-ruby'
 " Bundle 'snipMate'
-" Bundle 'Raimondi/delimitMate'
+" Bundle 'kana/vim-smartinput'
 
 Bundle 'gmarik/vundle'
 Bundle 'nanotech/jellybeans.vim'
@@ -38,7 +37,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'baskerville/vim-sxhkdrc'
 Bundle 'SirVer/ultisnips'
 Bundle 'a.vim'
-Bundle 'kana/vim-smartinput'
+Bundle 'Raimondi/delimitMate'
 
 filetype plugin indent on
 
@@ -50,19 +49,6 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-s>"
 
 let g:hybrid_use_Xresources = 1
-
-function! Smartinput_escape(char)
-    call smartinput#map_to_trigger('i', '<S-tab>', a:char, '<S-tab>')
-    call smartinput#define_rule({
-    \   'char':     '<S-tab>',
-    \   'at':       '\%#\_s*' + a:char,
-    \   'input':    '<C-r>=smartinput#_leave_block(''' + a:char + ''')<Enter><Right>'
-    \ })
-endfunction
-
-call Smartinput_escape(')')
-call Smartinput_escape(']')
-call Smartinput_escape('}')
 
 set timeoutlen=500
 set shortmess=filnxtToOI
