@@ -1,10 +1,9 @@
 #!/bin/sh
-
 cd $HOME/kode/muon
-
 while true; do
-    make &>> $HOME/muon.txt
-    valgrind ./muon &>> $HOME/kode/muon/muon.log & WM=$!
+    make &>> $HOME/kode/muon/muon.log
+  ./muon &>> $HOME/kode/muon/muon.log & WM=$!
+    sleep 1
     $HOME/.muonrc
     wait $WM
 done
