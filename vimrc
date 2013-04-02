@@ -46,13 +46,6 @@ let mapleader=","
 
 let g:ctrlp_working_path_mode = 2
 let g:gundo_right = 1
-nnoremap <leader>g :GundoToggle<cr>
-
-nnoremap <leader>b :BundleInstall<cr>
-nnoremap <leader>bb :BundleInstall!<cr>
-nnoremap <leader>bc :BundleClean<cr>
-
-nnoremap <c-p> :CtrlPCurWD<cr>
 
 let g:UltiSnipsSnippetDirectories = ["snippets"]
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
@@ -130,6 +123,15 @@ map <leader>v :tabedit $MYVIMRC<cr>
 nmap <leader>sa <Plug>(altr-sforward)
 nmap <leader>a <Plug>(altr-forward)
 nmap <leader>va <Plug>(altr-vforward)
+
+nnoremap <leader>g :GundoToggle<cr>
+
+nnoremap <leader>bb :BundleInstall!<cr>
+nnoremap <leader>b :BundleInstall<cr>
+nnoremap <leader>bc :BundleClean<cr>
+
+nnoremap <c-p> :CtrlPCurWD<cr>
+nnoremap <c-S-p> :CtrlP<cr>
 
 map <c-o> :only<cr>
 
