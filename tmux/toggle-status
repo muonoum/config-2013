@@ -1,0 +1,6 @@
+#!/bin/sh
+if [[ "$(tmux show status)" == "status on" ]]; then 
+    tmux set -q status off 
+else
+    tmux set -q status on
+fi
