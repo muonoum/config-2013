@@ -14,6 +14,7 @@ Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
 Bundle 'w0ng/vim-hybrid'
 
 let mapleader = '\'
