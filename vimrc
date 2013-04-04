@@ -3,186 +3,135 @@ filetype off
 set rtp+=$HOME/.vim/bundle/vundle/
 call vundle#rc()
 
-" Bundle 'FuzzyFinder'
-" Bundle 'L9'
-" Bundle 'vim-conque'
-" Bundle 'colorv.vim'
-" Bundle 'kana/vim-operator-user'
-" Bundle 'kana/vim-textobj-entire'
-" Bundle 'kana/vim-textobj-diff'
-" Bundle 'kana/vim-textobj-indent'
-" Bundle 'kana/vim-operator-replace'
-" Bundle 'kana/vim-niceblock'
-" Bundle 'kana/vim-textobj-underscore'
-" Bundle 'godlygeek/tabular'
-" Bundle 'kana/vim-smartword'
-" Bundle 'michaeljsmith/vim-indent-object'
-" Bundle 'tpope/vim-speeddating'
-" Bundle 'kana/vim-textobj-user'
-" Bundle 'kana/vim-textobj-function'
-" Bundle 'vim-ruby/vim-ruby'
-" Bundle 'snipMate'
-" Bundle 'kana/vim-smartinput'
-" Bundle 'a.vim'
-
-Bundle 'gmarik/vundle'
-Bundle 'sjl/gundo.vim'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'w0ng/vim-hybrid'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'baskerville/vim-sxhkdrc'
-Bundle 'SirVer/ultisnips'
-Bundle 'Raimondi/delimitMate'
+Bundle 'gmarik/vundle'
 Bundle 'kana/vim-altr'
+Bundle 'kana/vim-smartword'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'kien/ctrlp.vim'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-dispatch'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'w0ng/vim-hybrid'
+
+let mapleader = '\'
 
 filetype plugin indent on
 
-let mapleader=","
-
-let g:ctrlp_working_path_mode = 2
-let g:gundo_right = 1
-
-let g:UltiSnipsSnippetDirectories = ["snippets"]
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<c-s>"
-
-let g:hybrid_use_Xresources = 1
-
-set timeoutlen=500
-set shortmess=filnxtToOI
-set number
-set ruler
-set wrap
-set pastetoggle=<leader>.
-set nrformats=
-set linebreak
-set textwidth=0
-set showbreak=
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set noexpandtab
-set expandtab
-set splitbelow splitright
-set autoindent
-set wildmode=longest,list
-set hlsearch
-set ignorecase
-set smartcase
-set incsearch
-set ff=unix
-set virtualedit=all
-set showcmd
-set hidden
-set backspace=indent,eol,start
-set novisualbell
-set noerrorbells
-set vb t_vb=
-set nowrap
-set guioptions-=m
-set guioptions-=T
-set guioptions-=r
-set guioptions-=L
-set guioptions-=b
-set guioptions-=e
-set foldmethod=marker
-set scrolloff=1
-set pastetoggle=<leader>.
-set t_Co=256
-set wildignore+=*.o,*.d
-
-"color jellybeans
-color hybrid
-
 syntax on
 
+color hybrid "jellybeans
+
+highlight Normal ctermbg=None
+
 if has("autocmd")
-  autocmd! BufWritePost .vimrc source $MYVIMRC
-  autocmd! BufWritePre * :set ff=unix
-  autocmd! BufWritePre * :%s/\s\+$//e
-  autocmd! BufNewFile,BufRead *sxhkdrc* :set ft=sxhkdrc
-  autocmd! BufNewFile,BufRead *.coffee :set ft=coffee
-  autocmd! BufNewFile,BufRead *vimperatorrc :set ft=vim
-  autocmd! BufNewFile,BufRead *.h :set ft=c
-  autocmd! FileType c set commentstring=//\ %s
+    autocmd! FileType c set commentstring=//\ %s
+    autocmd! BufNewFile,BufRead *sxhkdrc* :set ft=sxhkdrc
+    autocmd! BufNewFile,BufRead *.coffee :set ft=coffee
+    autocmd! BufNewFile,BufRead *vimperatorrc :set ft=vim
+    autocmd! BufNewFile,BufRead *.h :set ft=c
+    autocmd! BufWritePost .vimrc source $HOME/.vimrc
+    autocmd! BufWritePost *
+    \   if filereadable('tags') |
+    \       call system('ctags -R ' . expand('%')) |
+    \   endif
 endif
 
-if has("win32")
-  set guifont=dina:h8
-else
-  set directory=/tmp//
-endif
+set autoindent
+set backspace=indent,eol,start
+set expandtab
+set guioptions-=L
+set guioptions-=T
+set guioptions-=b
+set guioptions-=e
+set guioptions-=m
+set guioptions-=r
+set hlsearch
+set ignorecase
+set incsearch
+set list
+set listchars=tab:>-,trail:-
+set nowrap
+set number
+set ruler
+set scrolloff=1
+set shiftwidth=4
+set shortmess=filnxtToOI
+set showcmd
+set smartcase
+set softtabstop=4
+set splitbelow splitright
+set tabstop=4
+set textwidth=0
+set wildignore+=*.o,*.d
 
-map <leader>v :tabedit $MYVIMRC<cr>
+function! Gotochar()
+    let chars = ['(', ')', '''', '"', '[', ']', '{', '}', '<', '>']
+    let min = min(filter(map(chars, "stridx(getline('.'), v:val, col('.'))"), "v:val >= 0"))
+    if min >= 0
+        execute 'norm!'.(min+1).'|'
+    endif
+endfunction
 
-nmap <leader>sa <Plug>(altr-sforward)
-nmap <leader>a <Plug>(altr-forward)
-nmap <leader>va <Plug>(altr-vforward)
+function! Altropen(dir)
+    let path = altr#_infer_the_missing_path(bufname('%'), 'forward', altr#_rule_table())
 
-nnoremap <leader>g :GundoToggle<cr>
+    if path isnot 0
+        let buf = bufnr(printf('^%s$', path))
+        let win = bufwinnr(buf)
 
-nnoremap <leader>bb :BundleInstall!<cr>
-nnoremap <leader>b :BundleInstall<cr>
-nnoremap <leader>bc :BundleClean<cr>
+        if buf == -1 || win == -1
+            execute a:dir . ' `=path`'
+        else
+            execute win 'wincmd w'
+        endif
+    endif
+endfunction
 
-nnoremap <c-p> :CtrlPCurWD<cr>
-nnoremap <c-S-p> :CtrlP<cr>
+map <silent> <leader>sa :call Altropen('sp')<cr>
+map <silent> <leader>a :call Altropen('edit')<cr>
+map <silent> <leader>va :call Altropen('vsp')<cr>
 
-map <c-o> :only<cr>
+nmap <leader>V :source $HOME/.vimrc<cr>
+nmap <leader>vv :vs $HOME/.vimrc<cr>
+nmap <leader>v :tabedit $HOME/.vimrc<cr>
+nmap <leader>sv :sp $HOME/.vimrc<cr>
 
-map Q <nop>
+nmap <leader>vm :vs Makefile<cr>
+nmap <leader>m :e Makefile<cr>
+nmap <leader>sm :sp Makefile<cr>
 
-vmap > >gv
-vmap < <gv
+nmap <leader>cc :CoffeeCompile<cr>
+nmap <leader>cm :CoffeeMake<cr>
 
-map <c-h> 5<c-w><
-map <c-l> 5<c-w>>
-map <c-j> <c-w>w
-map <c-k> <c-w>W
-
-map <leader>ew :e <C-R>=expand("%:p:h")."/"<cr>
-map <leader>es :sp <C-R>=expand("%:p:h")."/"<cr>
-map <leader>ev :vsp <C-R>=expand("%:p:h")."/"<cr>
-map <leader>et :tabe <C-R>=expand("%:p:h")."/"<cr>
-map <leader>cw :cd <C-R>=expand("%:p:h")."/"<cr>
-
-map <leader><cr> :nohlsearch<cr>
-
-map <leader>w :set wrap!<cr>
-imap <leader>w <esc>:set wrap!<cr>i
-
-map <leader>d :diffupdate<cr>
-imap <leader>d <esc>:diffupdate<cr>i
-
-map <leader>vm :vs Makefile<cr>
-map <leader>m :e Makefile<cr>
-map <leader>sm :sp Makefile<cr>
-
-map <leader>xx :bd<cr>
-
-map <leader>cc :CoffeeCompile<cr>
-map <leader>cm :CoffeeMake<cr>
+nmap <leader>xx :close<cr>
 
 cmap <C-A> <C-B>
+
+nmap Q <nop>
 
 nnoremap <cr> <esc>
 vnoremap <cr> <esc>gV
 onoremap <cr> <esc>
 inoremap <cr> <esc>`^
 
-" highlight Normal ctermbg=Black
-" highlight Normal ctermbg=Black
-" highlight NonText ctermbg=Black
-" highlight LineNr ctermbg=Black
-highlight TabLine gui=bold
-highlight TabLineSel gui=bold
-highlight StatusLine gui=bold
-highlight StatusLine gui=bold
-highlight StatusLineNC gui=bold
-highlight Folded gui=none
-highlight Comment gui=bold
+nmap <c-j> <c-w>w
+nmap <c-k> <c-w>W
+
+nmap <leader>xw :%s/\s\+$//e<cr>
+
+nmap <leader><cr> :nohlsearch<cr>
+
+nmap <leader>d :diffupdate<cr>
+nmap <leader>w :set wrap!<cr>
+imap <leader>d <esc>:diffupdate<cr>i
+imap <leader>w <esc>:set wrap!<cr>i
+
+nmap <leader>ub :BundleInstall!<cr>
+nmap <leader>b  :BundleInstall<cr>
+nmap <leader>cb :BundleClean<cr>
+
+nmap <c-p> :CtrlPCurWD<cr>
+nmap <c-S-p> :CtrlP<cr>
