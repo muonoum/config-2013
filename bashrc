@@ -31,9 +31,10 @@ export LANG="en_US.UTF-8"
 export EDITOR=vim
 export BROWSER=firefox
 export DMENU_OPTIONS="-h 22 -fn -*-dina-bold-r-normal--*-*-*-*-*-*-*-* -i -b -sf #9e5641 -sb #000 -nb #000 -nf #aaa"
-
 export XDG_CONFIG_HOME=$HOME/.xdg/config
 export XDG_DATA_HOME=$HOME/.xdg/data
+
+source /usr/share/chruby/chruby.sh
 
 alias vim="vim -u $HOME/.vimrc"
 alias bashrc="vim $HOME/.bashrc"
