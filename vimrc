@@ -16,6 +16,10 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'w0ng/vim-hybrid'
+Bundle 'goldfeld/vim-seek'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'dahu/vim-fanfingtastic'
+Bundle 'wikitopian/hardmode'
 
 let mapleader = '\'
 
@@ -25,7 +29,10 @@ syntax on
 
 color hybrid "jellybeans
 
-highlight Normal ctermbg=None
+highlight Normal ctermbg=none
+highlight EasyMotionTarget ctermbg=none ctermfg=160 cterm=bold
+highlight EasyMotionShade ctermbg=none ctermfg=238
+
 
 if has("autocmd")
     autocmd! FileType c set commentstring=//\ %s
@@ -91,9 +98,11 @@ function! Altropen(dir)
     endif
 endfunction
 
-map <silent> <leader>sa :call Altropen('sp')<cr>
-map <silent> <leader>a :call Altropen('edit')<cr>
-map <silent> <leader>va :call Altropen('vsp')<cr>
+nmap <silent> <leader>sa :call Altropen('sp')<cr>
+nmap <silent> <leader>a :call Altropen('edit')<cr>
+nmap <silent> <leader>va :call Altropen('vsp')<cr>
+
+nmap <silent> <c-e> :call Gotochar()<cr>
 
 nmap <leader>V :source $HOME/.vimrc<cr>
 nmap <leader>vv :vs $HOME/.vimrc<cr>
