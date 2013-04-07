@@ -6,3 +6,4 @@ vim/bundle/*
 !vim/bundle/vundle
 urxvt/*
 !urxvt/ext/
+vim/undo/*
