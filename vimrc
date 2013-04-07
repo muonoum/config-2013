@@ -19,6 +19,8 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'w0ng/vim-hybrid'
 Bundle 'kbarrette/mediummode'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'scrooloose/syntastic'
 
 let mapleader = '\'
 
@@ -33,6 +35,8 @@ highlight Normal ctermbg=none
 highlight EasyMotionTarget ctermbg=none ctermfg=160 cterm=bold
 highlight EasyMotionShade ctermbg=none ctermfg=238
 
+sign define dummy
+
 if has('autocmd')
     au! FileType c set commentstring=//\ %s
     au! BufNewFile,BufRead *sxhkdrc* :set ft=sxhkdrc
@@ -42,6 +46,8 @@ if has('autocmd')
     au! BufWritePost .vimrc source $HOME/.vimrc
     au! VimResized * :wincmd =
     au! WinEnter,BufWinEnter,CursorHold * checktime
+    au! BufEnter * sign define dummy
+    au! BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
     au! BufReadPost *
         \   if line("'\"") > 1 && line("'\"") <= line("$") |
         \       exe "norm! g`\"" |
@@ -155,6 +161,8 @@ function! Resize(dir)
         exec "vertical resize " . a:dir
     endif
 endfunction
+
+nnoremap <F10> :YcmForceCompileAndDiagnostics<cr>
 
 nmap <silent> <c-o> :call Swapnext()<cr>
 nmap <silent> <c-i> :call Swapprev()<cr>
