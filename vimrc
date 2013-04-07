@@ -147,14 +147,12 @@ function! Swapnext()
 endfunction
 
 function! Resize(dir)
-    let dir = a:dir > 0 ? "+" . a:dir : a:dir
-
     if winnr() == winnr('$')
         wincmd W
-        exec "vertical resize " . dir
+        exec "vertical resize " . a:dir
         wincmd w
     else
-        exec "vertical resize " . dir
+        exec "vertical resize " . a:dir
     endif
 endfunction
 
@@ -162,8 +160,8 @@ nmap <silent> <c-o> :call Swapnext()<cr>
 nmap <silent> <c-i> :call Swapprev()<cr>
 nmap <c-j> <c-w>w
 nmap <c-k> <c-w>W
-nmap <silent> <c-h> :call Resize(-5)<cr>
-nmap <silent> <c-l> :call Resize(+5)<cr>
+nmap <silent> <c-h> :call Resize('-5')<cr>
+nmap <silent> <c-l> :call Resize('+5')<cr>
 
 nmap <leader>V :source $HOME/.vimrc<cr>
 nmap <leader>vv :vs $HOME/.vimrc<cr>
