@@ -189,6 +189,9 @@ nmap <silent> <leader>sa :call Altropen('sp')<cr>
 nmap <silent> <leader>a :call Altropen('edit')<cr>
 nmap <silent> <leader>va :call Altropen('vsp')<cr>
 
+nmap <leader>cn :cnext<cr>
+nmap <leader>cp :cprevious<cr>
+
 nmap <leader>w <Plug>(smartword-w)
 nmap <leader>b <Plug>(smartword-b)
 nmap <leader>e <Plug>(smartword-e)
