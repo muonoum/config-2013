@@ -153,13 +153,46 @@ function! Swapnext()
     endif
 endfunction
 
-function! Resize(dir)
-    if winnr() == winnr('$')
-        wincmd W
-        exec "vertical resize " . a:dir
-        wincmd w
+function! Sign(num)
+    if a:num >= 0
+        return "+" . a:num
     else
-        exec "vertical resize " . a:dir
+        return a:num
+    endif
+endfunction
+
+function! Numwins(start, dir)
+    let restore = winnr()
+    let current = a:start
+
+    let n = 0
+
+    exec current . 'wincmd w'
+
+    while 1
+        exec 'wincmd ' . a:dir
+        if winnr() == current || n == (winnr('$') - 1)
+            break
+        endif
+        let current = winnr()
+        let n = n + 1
+    endwhile
+
+    exec restore . 'wincmd w'
+
+    return [n, current]
+endfunction
+
+function! Resizev(dist)
+    if Numwins(winnr(), 'l')[0] == 0
+        exe 'vert res ' . Sign(-a:dist)
+    elseif Numwins(winnr(), 'h')[0] == 0
+        exe 'vert res ' . Sign(a:dist)
+    else
+        let restore = winnr()
+        exe 'winc l'
+        exe 'vert res ' . Sign(-a:dist)
+        exe restore . "winc w"
     endif
 endfunction
 
@@ -169,8 +202,8 @@ nmap <silent> <c-o> :call Swapnext()<cr>
 nmap <silent> <c-i> :call Swapprev()<cr>
 nmap <c-j> <c-w>w
 nmap <c-k> <c-w>W
-nmap <silent> <c-h> :call Resize('-5')<cr>
-nmap <silent> <c-l> :call Resize('+5')<cr>
+nmap <silent> <c-h> :call Resizev(-5)<cr>
+nmap <silent> <c-l> :call Resizev(+5)<cr>
 
 nmap <leader>V :source $HOME/.vimrc<cr>
 nmap <leader>vv :vs $HOME/.vimrc<cr>
