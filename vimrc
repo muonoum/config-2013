@@ -45,7 +45,6 @@ if has('autocmd')
     au! BufNewFile,BufRead *.h :set ft=c
     au! BufWritePost .vimrc source $HOME/.vimrc
     au! VimResized * :wincmd =
-    au! WinEnter,BufWinEnter,CursorHold * checktime
     au! BufEnter * sign define dummy
     au! BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
     au! BufReadPost *
