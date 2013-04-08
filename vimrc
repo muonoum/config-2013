@@ -31,7 +31,7 @@ syntax on
 " color jellybeans
 color hybrid
 
-highlight Normal ctermbg=none
+highlight Normal ctermbg=none guibg=black
 highlight EasyMotionTarget ctermbg=none ctermfg=160 cterm=bold
 highlight EasyMotionShade ctermbg=none ctermfg=238
 
@@ -65,6 +65,8 @@ if has('gui_running')
     set guioptions-=e
     set guioptions-=m
     set guioptions-=r
+
+    set cursorline
 endif
 
 set autoindent
