@@ -196,7 +196,7 @@ function! Resizev(dist)
     endif
 endfunction
 
-nnoremap <F10> :YcmForceCompileAndDiagnostics<cr>
+nnoremap <leader>q :YcmForceCompileAndDiagnostics<cr>
 
 nmap <silent> <c-o> :call Swapnext()<cr>
 nmap <silent> <c-i> :call Swapprev()<cr>
