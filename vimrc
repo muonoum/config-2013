@@ -183,7 +183,7 @@ function! Numwins(start, dir)
     return [n, current]
 endfunction
 
-function! Resizev(dist)
+function! Resizevsp(dist)
     if Numwins(winnr(), 'l')[0] == 0
         exe 'vert res ' . Sign(-a:dist)
     elseif Numwins(winnr(), 'h')[0] == 0
@@ -202,8 +202,8 @@ nmap <silent> <c-o> :call Swapnext()<cr>
 nmap <silent> <c-i> :call Swapprev()<cr>
 nmap <c-j> <c-w>w
 nmap <c-k> <c-w>W
-nmap <silent> <c-h> :call Resizev(-5)<cr>
-nmap <silent> <c-l> :call Resizev(+5)<cr>
+nmap <silent> <c-h> :call Resizevsp(-5)<cr>
+nmap <silent> <c-l> :call Resizevsp(+5)<cr>
 
 nmap <leader>V :source $HOME/.vimrc<cr>
 nmap <leader>vv :vs $HOME/.vimrc<cr>
