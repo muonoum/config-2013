@@ -224,6 +224,8 @@ nmap <silent> <leader>va :call Altropen('vsp')<cr>
 
 nmap <leader>cn :cnext<cr>
 nmap <leader>cp :cprevious<cr>
+nmap <leader>ln :lnext<cr>
+nmap <leader>lp :lprevious<cr>
 
 nmap <leader>w <Plug>(smartword-w)
 nmap <leader>b <Plug>(smartword-b)
