@@ -36,7 +36,7 @@ export XDG_DATA_HOME=$HOME/.xdg/data
 
 source /usr/share/chruby/chruby.sh
 
-alias vim="vim -u $HOME/.vimrc"
+alias vim="vim -X -u $HOME/.vimrc"
 alias bashrc="vim $HOME/.bashrc"
 alias vimrc="vim $HOME/.vimrc"
 alias rc="source $HOME/.bashrc"
