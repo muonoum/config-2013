@@ -68,6 +68,10 @@ if has('gui_running')
     set cursorline
 endif
 
+if version >= 703
+    set relativenumber
+endif
+
 set autoindent
 set autoread
 set backspace=indent,eol,start
@@ -82,7 +86,6 @@ set list
 set listchars=tab:>-,trail:-
 set nowrap
 set number
-set relativenumber
 set ruler
 set scrolloff=1
 set shiftwidth=4
@@ -94,16 +97,18 @@ set softtabstop=4
 set splitbelow splitright
 set tabstop=4
 set textwidth=0
-set undodir=$HOME/.vim/undo
-set undofile
 set undoreload=10000
 set virtualedit=all
 set wildignore+=*.o,*.d
 set wildmenu
 set cpoptions+=n
 
-if !isdirectory(expand(&undodir))
-    call mkdir(expand(&undodir), "p")
+if exists("+undofile")
+    set undodir=$HOME/.vim/undo
+    set undofile
+    if !isdirectory(expand(&undodir))
+        call mkdir(expand(&undodir), "p")
+    endif
 endif
 
 function! Gotochar()
