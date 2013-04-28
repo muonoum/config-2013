@@ -96,12 +96,14 @@ set sidescrolloff=2
 set smartcase
 set softtabstop=4
 set splitbelow splitright
-set tabstop=4
+set tabstop=8
 set textwidth=0
+set shiftround
 set undoreload=10000
 set virtualedit=all
 set wildignore+=*.o,*.d
 set wildmenu
+set wildmode=list:full
 set cpoptions+=n
 
 if exists("+undofile")
@@ -228,6 +230,8 @@ nmap <silent> <leader>sa :call Altropen('sp')<cr>
 nmap <silent> <leader>a :call Altropen('edit')<cr>
 nmap <silent> <leader>va :call Altropen('vsp')<cr>
 
+nnoremap <Tab> :b#<cr>
+
 nmap <leader>cn :cnext<cr>
 nmap <leader>cp :cprevious<cr>
 nmap <leader>ln :lnext<cr>
@@ -251,6 +255,7 @@ cmap <C-A> <C-B>
 
 nmap Q <nop>
 nmap K <nop>
+vmap K <nop>
 
 vmap <leader>p "_dP
 
@@ -267,6 +272,9 @@ vnoremap k gk
 nmap <silent> <leader>xw mz :%s/\s\+$//e<cr>`z:noh<cr>
 
 nmap <leader><cr> :nohlsearch<cr>
+nnoremap <silent> <Space> :YcmForceCompileAndDiagnostics<cr>:nohlsearch<Bar>:echo<CR>
+
+nnoremap <leader>q :YcmForceCompileAndDiagnostics<cr>
 
 nmap <leader>d :diffupdate<cr>
 imap <leader>d <esc>:diffupdate<cr>i
