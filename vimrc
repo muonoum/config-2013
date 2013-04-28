@@ -78,6 +78,7 @@ set backspace=indent,eol,start
 set complete=.,i,]
 set completeopt=longest,menuone,preview
 set expandtab
+set encoding=utf-8
 set hlsearch
 set ignorecase
 set incsearch
